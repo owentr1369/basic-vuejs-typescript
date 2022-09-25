@@ -3,8 +3,22 @@
     <router-link to="/">Home</router-link> |
     <router-link to="/about">About</router-link>
   </nav>
-  <router-view/>
+  <h1>{{ msg }}</h1>
+  <router-view />
 </template>
+
+<script lang="ts">
+import { defineComponent } from "vue";
+import { ref } from "vue";
+
+export default defineComponent({
+  name: "HomeView",
+  setup() {
+    const msg = ref<string>("Hello world");
+    return { msg };
+  },
+});
+</script>
 
 <style lang="scss">
 #app {
